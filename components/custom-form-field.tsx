@@ -1,22 +1,20 @@
 "use client";
 
+import { E164Number } from "libphonenumber-js/core";
+import Image from "next/image";
+import { Control } from "react-hook-form";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+
 import {
-  Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Control } from "react-hook-form";
 import { FormFieldType } from "./froms/patient-form";
-import Image from "next/image";
-
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
-import { E164Number } from "libphonenumber-js/core";
 
 interface CustomProps {
   control: Control<any>;
@@ -79,7 +77,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
   }
 };
 
-const CustomeFormField = (props: CustomProps) => {
+const CustomFormField = (props: CustomProps) => {
   const { control, fieldType, name, label } = props;
 
   return (
@@ -100,4 +98,4 @@ const CustomeFormField = (props: CustomProps) => {
   );
 };
 
-export default CustomeFormField;
+export default CustomFormField;
