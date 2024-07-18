@@ -10,18 +10,8 @@ import { Form } from "@/components/ui/form";
 import { UserFormValidation } from "@/lib/validation";
 import { createUser } from "@/lib/actions/patient.actions";
 
-import CustomeFormField from "../custom-form-field";
+import CustomFormField, { FormFieldType } from "../custom-form-field";
 import SubmitButton from "../submit-button";
-
-export enum FormFieldType {
-  INPUT = "input",
-  TEXTAREA = "textarea",
-  PHONE_INPUT = "phoneinput",
-  CHECKBOX = "checkbox",
-  DATE_PICKER = "datepicker",
-  SELECT = "select",
-  SKELETON = "skeleton",
-}
 
 const PatientForm = () => {
   const router = useRouter();
@@ -60,7 +50,7 @@ const PatientForm = () => {
           <p className="text-dark-700">Schedule your first appointment.</p>
         </section>
 
-        <CustomeFormField
+        <CustomFormField
           fieldType={FormFieldType.INPUT}
           control={form.control}
           name="name"
@@ -70,7 +60,7 @@ const PatientForm = () => {
           iconAlt="user"
         />
 
-        <CustomeFormField
+        <CustomFormField
           fieldType={FormFieldType.INPUT}
           control={form.control}
           name="email"
@@ -80,7 +70,7 @@ const PatientForm = () => {
           iconAlt="email"
         />
 
-        <CustomeFormField
+        <CustomFormField
           fieldType={FormFieldType.PHONE_INPUT}
           control={form.control}
           name="phone"
