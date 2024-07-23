@@ -58,14 +58,19 @@ const RegisterForm = ({ user }: { user: User }) => {
     }
 
     try {
-      const patientData = {
+      const patientData: RegisterUserParams = {
         ...values,
         userId: user.$id,
         birthDate: new Date(values.birthDate),
         identificationDocument: formData,
+        allergies: values.allergies || "",
+        currentMedication: values.currentMedication || "",
+        familyMedicalHistory: values.familyMedicalHistory || "",
+        pastMedicalHistory: values.pastMedicalHistory || "",
+        identificationType: values.identificationType || "",
+        identificationNumber: values.identificationNumber || "",
       };
 
-      //@ts-ignore
       const newPatient = await registerPatient(patientData);
 
       if (newPatient) {
